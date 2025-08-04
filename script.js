@@ -41,7 +41,8 @@ document.getElementById("orderForm").addEventListener("submit", function (e) {
   const quantity = document.getElementById("quantity").value;
 
   const message = `নাম: ${name}%0aমোবাইল: ${mobile}%0aঠিকানা: ${address}%0aআমের জাত: ${mango}%0aপরিমাণ: ${quantity} কেজি%0aমন্তব্য: ${note}`;
-  const url = `https://wa.me/8801911976731?text=${message}`;
+  const url = `https://wa.me/8801772177770?text=${message}`;
   window.open(url, "_blank");
 });
+
 
