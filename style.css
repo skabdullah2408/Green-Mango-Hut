@@ -41,8 +41,8 @@ main {
 }
 
 label, input, select {
-    font-size: 25px;
-    margin: 5px 0;
+    font-size: 30px;
+    margin: 10px 0;
 }
 
 .image-box {
@@ -92,3 +92,4 @@ footer {
     font-size: 20px;
 
 }
+
