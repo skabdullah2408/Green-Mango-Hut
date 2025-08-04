@@ -1,14 +1,15 @@
+/======== General Styles ========/
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
 }
 
+/======== Header Styles ========/
 .header {
-width: 100%;
-overflow: show;
+    width: 100%;
+    overflow: hidden;
 }
 
 .header-img {
@@ -16,81 +17,109 @@ overflow: show;
     height: auto;
     display: block;
     object-fit: cover;
-    border-radius: 0px;
+    border-radius: 0;
 }
 
-
+/======== Main Container ========/
 main {
-    padding: 60px;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
 }
 
+/======== Form Layout ========/
 .form-group {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
 }
 
 .form-group label {
-   width: 150px;
-   font-size: 16px;
+    width: 150px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
 }
 
-.form-group input {
-   flex: 1;
-   padding: 6px;
+.form-group input,
+.form-group select {
+    flex: 1;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-label, input, select {
-    font-size: 20px;
-    margin: 5px 0;
+/======== Button Style ========/
+button {
+    padding: 12px 25px;
+    background-color: #076d21;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
 }
 
+button:hover {
+    background-color: #054d18;
+}
+
+/======== Image Style (if needed) ========/
 .image-box {
-    margin: 20px;
+    margin: 20px auto;
+    text-align: center;
 }
 
-img {
+.image-box img {
     width: 300px;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-button {
-    padding: 10px 20px;
-    background-color: rgb(7, 109, 33);
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+/======== Responsive Container ========/
 .container {
-  width: 100%;
-  padding: 2vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2vw;
+    gap: 20px;
 }
+
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    font-size: 14px;
-  }
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    button {
+        font-size: 16px;
+    }
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
+/======== Footer Style ========/
 footer {
-    background-color: rgb(223, 243, 170);
-    color: rgb(0, 0, 0);
-    padding: 1px 0;
+    background-color: #dff3aa;
+    color: #000;
+    padding: 8px 0;
+    text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
-    font-size: 20px;
-
+    font-size: 18px;
+    z-index: 100;
 }
-
-
