@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>GREEN MANGO HUT.com</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
+ <body>
+
+  <header>
+    <img src="header.jpg" alt="Header Image"class="header-img">
+  
+  </header>
+
+  <main>
+    <form id="orderForm">
+      <div class="form-group">
+        <label for="name">নামঃ</label>
+        <input type="text" id="name" name="name" placeholder="আপনার নাম লিখুন..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="mobile">মোবাইল নাম্বারঃ</label>
+        <input type="text" id="mobile" name="mobile" placeholder="মোবাইল নাম্বার লিখুন..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="address">ঠিকানাঃ</label>
+        <input type="text" id="address" name="address" placeholder="আপনার ঠিকানা লিখুন..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="note">মন্তব্যঃ</label>
+        <input type="text" id="note" name="note" placeholder="মন্তব্য লিখুন...">
+      </div>
+
+      <div class="form-group">
+        <label for="mangoType">আমের জাত:</label>
+        <select id="mangoType" name="mangoType" onchange="updateMangoInfo()">
+          <option value="fazli">ফজলি</option>
+          <option value="langra">ল্যাংড়া</option>
+          <option value="himshagar">হিমসাগর/খিরসাপাত</option>
+          <option value="gopalvog">গোপালভোগ</option>
+          <option value="amrupali">অম্রপলি/আমরুপালি</option>
+          <option value="bari">বারি-৪</option>
+          <option value="bananamango">ব্যানানা ম্যাংগো</option>
+          <option value="gouromoti">গৌড়মতি</option>
+          <option value="katimon">কাটিমন</option>
+        </select>
+      </div>
+     <p>প্রতি কেজির দাম: <span id="pricePerKg">70</span> টাকা</p>
+     <p>২৫ কেজির নিচে Order নেওয়া হইনা</p>
+      <div class="form-group">
+        <label for="quantity">কত কেজি?</label>
+        <input type="number" id="quantity" name="quantity" value="25" min="25" onchange="calculateTotal()">
+      </div>
+      <br>
+      <button type="submit">WhatsApp-এ পাঠান</button>
+    </form>
+   </main>
+
+   <footer>
+    <p>📞 Help line: 01911976731</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
