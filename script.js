@@ -84,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
       `🧮 মোট মূল্য (আনুমানিক): ৳${total}`,
       note ? `📝 মন্তব্য: ${note}` : null,
       "",
-      "দয়া করে কনফার্ম করুন। ধন্যবাদ।",
     ].filter(Boolean);
 
     const encoded = encodeURIComponent(lines.join("\n"));
@@ -93,3 +92,4 @@ document.addEventListener("DOMContentLoaded", function () {
     window.open(url, "_blank", "noopener,noreferrer");
   });
 });
+
