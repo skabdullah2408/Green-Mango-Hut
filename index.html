@@ -5,20 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Green Mango Hub — অর্ডার ফর্ম</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Top Bar / Logo -->
+
   <header class="site-header">
-    <!-- আপনার লোগো ফাইল এখানে রাখুন (logo.png) -->
+  
     <img src="header.jpg" alt="Green Mango Hut Logo" class="logo">
   </header>
 
-  <!-- Form Card -->
+
   <main class="wrapper">
     <section class="card">
       <h1>🍋 Green Mango Hub — অর্ডার ফর্ম</h1>
@@ -26,14 +24,14 @@
 
       <form id="orderForm" novalidate>
         <div class="grid">
-          <!-- Name -->
+         
           <div class="form-group">
             <label for="name">নাম<span class="req">*</span></label>
             <input type="text" id="name" name="name" placeholder="আপনার নাম লিখুন…" autocomplete="name" required />
             <small class="error" data-err-for="name"></small>
           </div>
 
-          <!-- Phone -->
+   
           <div class="form-group">
             <label for="phone">মোবাইল নাম্বার<span class="req">*</span></label>
             <input type="tel" id="phone" name="phone" placeholder="01XXXXXXXXX" inputmode="numeric" autocomplete="tel" required />
@@ -41,24 +39,24 @@
             <small class="error" data-err-for="phone"></small>
           </div>
 
-          <!-- Address -->
+         
           <div class="form-group">
             <label for="address">ঠিকানা<span class="req">*</span></label>
             <textarea id="address" name="address" rows="2" placeholder="বিস্তারিত ঠিকানা লিখুন…" required></textarea>
             <small class="error" data-err-for="address"></small>
           </div>
 
-          <!-- Note -->
+         
           <div class="form-group">
             <label for="note">মন্তব্য</label>
             <textarea id="note" name="note" rows="2" placeholder="যদি বিশেষ কিছু জানাতে চান…"></textarea>
           </div>
 
-          <!-- Variety -->
+        
           <div class="form-group">
             <label for="variety">আমের জাত<span class="req">*</span></label>
             <select id="variety" name="variety" required>
-              <!-- data-price = প্রতি কেজির দাম -->
+              
               <option value="" disabled selected>একটি জাত নির্বাচন করুন</option>
               <option value="ফজলি" data-price="70">ফজলি — ৳70/কেজি</option>
               <option value="ল্যাংড়া" data-price="90">ল্যাংড়া — ৳90/কেজি</option>
@@ -70,25 +68,25 @@
             <small class="error" data-err-for="variety"></small>
           </div>
 
-          <!-- Price Info -->
+         
           <div class="form-group readonly">
             <label>প্রতি কেজির দাম</label>
             <div class="readonly-box"><span id="pricePerKg">—</span> টাকা</div>
           </div>
 
-          <!-- Min Order Info -->
+          
           <div class="form-note">
             <strong>ন্যূনতম অর্ডার:</strong> ১২ কেজি (১ কার্টন)। বড় অর্ডারের জন্য কল করুন।
           </div>
 
-          <!-- Quantity -->
+          
           <div class="form-group">
             <label for="qty">কত কেজি?<span class="req">*</span></label>
             <input type="number" id="qty" name="qty" min="12" step="1" value="12" required />
             <small class="error" data-err-for="qty"></small>
           </div>
 
-          <!-- Total -->
+       
           <div class="form-group total">
             <label>সম্ভাব্য মোট মূল্য</label>
             <div class="total-box"><span id="totalAmount">—</span> টাকা</div>
@@ -96,23 +94,21 @@
           </div>
         </div>
 
-        <!-- Submit -->
+        
         <button type="submit" class="btn-whatsapp" id="sendWhatsApp">
           📲 WhatsApp-এ পাঠান
         </button>
 
-        <!-- Or Call -->
+    
         <a class="btn-outline" href="tel:+8801772177770">📞 সরাসরি কল করুন</a>
       </form>
     </section>
   </main>
 
-  <!-- Sticky Help Bar -->
   <footer class="helpbar">
     <span>📞 Help line: <a href="tel:+8801772177770">01772177770</a></span>
   </footer>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
