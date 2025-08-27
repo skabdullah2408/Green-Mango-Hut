@@ -1,73 +1,118 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="mango.jpg">
-  <title>Green Mango Hut</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- </head>
- <body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Green Mango Hub — অর্ডার ফর্ম</title>
 
-  <header>
-    <img src="header.jpg" alt="Header Image"class="header-img">
-  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top Bar / Logo -->
+  <header class="site-header">
+    <!-- আপনার লোগো ফাইল এখানে রাখুন (logo.png) -->
+    <img src="header.jpg" alt="Green Mango Hut Logo" class="logo">
   </header>
 
-  <main>
-    <form id="orderForm">
-      <div class="form-group">
-        <label for="name">নামঃ</label>
-        <input type="text" id="name" name="name" placeholder="আপনার নাম লিখুন..." required>
-      </div>
+  <!-- Form Card -->
+  <main class="wrapper">
+    <section class="card">
+      <h1>🍋 Green Mango Hub — অর্ডার ফর্ম</h1>
+      <p class="subtext">তাজা, নিরাপদ, সরাসরি বাগান থেকে।</p>
 
-      <div class="form-group">
-        <label for="mobile">মোবাইল নাম্বারঃ</label>
-        <input type="text" id="mobile" name="mobile" placeholder="মোবাইল নাম্বার লিখুন..." required>
-      </div>
+      <form id="orderForm" novalidate>
+        <div class="grid">
+          <!-- Name -->
+          <div class="form-group">
+            <label for="name">নাম<span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="আপনার নাম লিখুন…" autocomplete="name" required />
+            <small class="error" data-err-for="name"></small>
+          </div>
 
-      <div class="form-group">
-        <label for="address">ঠিকানাঃ</label>
-        <input type="text" id="address" name="address" placeholder="আপনার ঠিকানা লিখুন..." required>
-      </div>
+          <!-- Phone -->
+          <div class="form-group">
+            <label for="phone">মোবাইল নাম্বার<span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="01XXXXXXXXX" inputmode="numeric" autocomplete="tel" required />
+            <small class="hint">বাংলাদেশি নাম্বার (11 ডিজিট) — যেমন 017XXXXXXXX</small>
+            <small class="error" data-err-for="phone"></small>
+          </div>
 
-      <div class="form-group">
-        <label for="note">মন্তব্যঃ</label>
-        <input type="text" id="note" name="note" placeholder="মন্তব্য লিখুন...">
-      </div>
+          <!-- Address -->
+          <div class="form-group">
+            <label for="address">ঠিকানা<span class="req">*</span></label>
+            <textarea id="address" name="address" rows="2" placeholder="বিস্তারিত ঠিকানা লিখুন…" required></textarea>
+            <small class="error" data-err-for="address"></small>
+          </div>
 
-      <div class="form-group">
-        <label for="mangoType">আমের জাত:</label>
-        <select id="mangoType" name="mangoType" onchange="updateMangoInfo()">
-          <option value="fazli">ফজলি</option>
-          <option value="langra">ল্যাংড়া</option>
-          <option value="himshagar">হিমসাগর/খিরসাপাত</option>
-          <option value="gopalvog">গোপালভোগ</option>
-          <option value="amrupali">অম্রপলি/আমরুপালি</option>
-          <option value="bari">বারি-৪</option>
-          <option value="bananamango">ব্যানানা ম্যাংগো</option>
-          <option value="gouromoti">গৌড়মতি</option>
-          <option value="katimon">কাটিমন</option>
-        </select>
-      </div>
-     <p>প্রতি কেজির দাম: <span id="pricePerKg">70</span> টাকা</p>
-     <p>12 কেজির নিচে Order নেওয়া হইনা</p>
-      <div class="form-group">
-        <label for="quantity">কত কেজি?</label>
-        <input type="number" id="quantity" name="quantity" value="12" min="12" onchange="calculateTotal()">
-      </div>
-      <br>
-      <button type="submit">WhatsApp-এ পাঠান</button>
-    </form>
-   </main>
+          <!-- Note -->
+          <div class="form-group">
+            <label for="note">মন্তব্য</label>
+            <textarea id="note" name="note" rows="2" placeholder="যদি বিশেষ কিছু জানাতে চান…"></textarea>
+          </div>
 
-   <footer>
-    <p>📞 Help line: 01772177770</p>
+          <!-- Variety -->
+          <div class="form-group">
+            <label for="variety">আমের জাত<span class="req">*</span></label>
+            <select id="variety" name="variety" required>
+              <!-- data-price = প্রতি কেজির দাম -->
+              <option value="" disabled selected>একটি জাত নির্বাচন করুন</option>
+              <option value="ফজলি" data-price="70">ফজলি — ৳70/কেজি</option>
+              <option value="ল্যাংড়া" data-price="90">ল্যাংড়া — ৳90/কেজি</option>
+              <option value="হিমসাগর" data-price="100">হিমসাগর — ৳100/কেজি</option>
+              <option value="গোপালভোগ" data-price="80">গোপালভোগ — ৳80/কেজি</option>
+              <option value="হাড়িভাঙা" data-price="75">হাড়িভাঙা — ৳75/কেজি</option>
+              <option value="অশিনা" data-price="60">অশিনা — ৳60/কেজি</option>
+            </select>
+            <small class="error" data-err-for="variety"></small>
+          </div>
+
+          <!-- Price Info -->
+          <div class="form-group readonly">
+            <label>প্রতি কেজির দাম</label>
+            <div class="readonly-box"><span id="pricePerKg">—</span> টাকা</div>
+          </div>
+
+          <!-- Min Order Info -->
+          <div class="form-note">
+            <strong>ন্যূনতম অর্ডার:</strong> ১২ কেজি (১ কার্টন)। বড় অর্ডারের জন্য কল করুন।
+          </div>
+
+          <!-- Quantity -->
+          <div class="form-group">
+            <label for="qty">কত কেজি?<span class="req">*</span></label>
+            <input type="number" id="qty" name="qty" min="12" step="1" value="12" required />
+            <small class="error" data-err-for="qty"></small>
+          </div>
+
+          <!-- Total -->
+          <div class="form-group total">
+            <label>সম্ভাব্য মোট মূল্য</label>
+            <div class="total-box"><span id="totalAmount">—</span> টাকা</div>
+            <small class="vat-note">* ডেলিভারি খরচ লোকেশনভেদে প্রযোজ্য হতে পারে।</small>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn-whatsapp" id="sendWhatsApp">
+          📲 WhatsApp-এ পাঠান
+        </button>
+
+        <!-- Or Call -->
+        <a class="btn-outline" href="tel:+8801772177770">📞 সরাসরি কল করুন</a>
+      </form>
+    </section>
+  </main>
+
+  <!-- Sticky Help Bar -->
+  <footer class="helpbar">
+    <span>📞 Help line: <a href="tel:+8801772177770">01772177770</a></span>
   </footer>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
-
 </html>
-
-
